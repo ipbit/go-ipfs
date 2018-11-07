@@ -20,6 +20,8 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y librados-dev; fi
 
 install:
+  - mkdir $GOPATH/src/github.com/ipfs
+  - mv $GOPATH/src/github.com/ipbit/go-ipfs $GOPATH/src/github.com/ipfs/go-ipfs
   - make install
 
 script:
